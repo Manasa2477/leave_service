@@ -5,9 +5,6 @@ const { connect, sql } = require("./sqlserver");
     const userDetails = await pool
       .request()
       .input("userId", sql.VarChar, userId)
-      // .query(`
-      //  SELECT * FROM USERs WHERE userId = @userId
-      // `);
       .execute(DB.GETCHECKUSER)
     return userDetails;
 }

@@ -43,7 +43,7 @@ const getleaves = async (req, res, next) => {
     const pool = await connect();
     const result = await pool
       .request()
-      .input("userId", sql.VarChar, userId) // or user.recordset[0].userId if needed
+      .input("userId", sql.VarChar, userId) 
       .execute(DB.GETUSER);
 
     return res.json({ message: "User details", data: result.recordset[0] });
